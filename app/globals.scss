@@ -3,11 +3,21 @@ $secondary: #65b891;
 $tertiary: #493657;
 
 $light: #f4f4f4;
+$medium: #cfcfcf;
 $dark: #111111;
 
 $danger: #bb0000;
 $warning: #ffae00;
 $success: #009944;
+
+$header-height: 5rem;
+
+
+/* Ensure content is visible when clicking target links */
+html {
+    scroll-padding-top: $header-height; /* height of sticky header */
+}
+  
 
 body {
     margin: 0;
@@ -20,12 +30,25 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+a {
+    color: $primary;
+    text-decoration: underline;
+
+    &:visited {
+        color: $tertiary;
+    }
+
+    &:hover {
+        color: $secondary;
+    }
+}
+
 header {
     background-color: $primary;
     margin: 0;
     padding: 0 20%;
     width: 60%;
-    height: 5rem;
+    height: $header-height;
     position: fixed;
     top: 0;
     left: 0;
@@ -50,7 +73,7 @@ header {
                 padding: 0.85rem;
 
                 a {
-                    color: $light;
+                    color: $light !important;
                     text-decoration: none;
                     padding: 1rem;
 
@@ -62,7 +85,7 @@ header {
                 &.active a {
                     background-color: $light;
                     border-radius: 0.5rem;
-                    color: $primary;
+                    color: $primary !important;
                 }
             }
         }
@@ -85,5 +108,52 @@ footer {
 
 main {
     background-color: $light;
-    padding: 6rem 15% 3rem 15%;
+    padding: 6rem 15% 1rem 15%;
+
+    aside {
+        display: inline-block;
+        width: 20%;
+        vertical-align: top;
+        margin-top: 4rem;
+        text-align: right;
+        position: sticky;
+        -webkit-position: sticky;
+        top: $header-height;
+
+        a {
+            color: $dark !important;
+            text-decoration: none;
+            padding: 1rem 0;
+            display: block;
+            margin-right: 2rem;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    article {
+        display:inline-block;
+        vertical-align: top;
+        width: 75%;
+        border-left: 1px solid $medium;
+
+        h1 {
+            margin: 1rem 2rem;
+            font-size: 2rem;;
+        }
+
+        section {
+            padding: 0 2rem 2rem 2rem;
+
+            h2 {
+                margin: 0;
+            }
+
+            h3 {
+                margin-bottom: 0;
+            }
+        }
+    }
 }
