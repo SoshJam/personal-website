@@ -23,7 +23,7 @@ export default function RootLayout({
                             <NavLink href="/">Home</NavLink>
                             <NavLink href="/about">About Me</NavLink>
                             <NavLink href="/projects">Projects</NavLink>
-                            <NavLink href="/resume.pdf">Resume</NavLink>
+                            <li><a href="/resume.pdf" target="_blank">Resume</a></li>
                             <NavLink href="/contact">Contact</NavLink>
                         </ul>
                     </nav>
