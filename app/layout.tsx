@@ -27,8 +27,12 @@ export default function RootLayout({
                         </ul>
                     </nav>
                 </header>
-
+                
                 {children}
+
+                <footer>
+                    <p>&copy; {new Date().getFullYear()} Sam Hill</p>
+                </footer>
 
             </body>
         </html>
